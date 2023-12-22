@@ -6,7 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/nodemaster
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
@@ -14,8 +13,7 @@ jobs:
 
       - name: Fail if Snyk found high vulnerabilities
         run: |
-          if [[ -n "$(grep 'high severity vulnerabilities found' snyk-report.json)" ]]; then
+          if grep -q 'high severity vulnerabilities found' snyk-report.json; then
             echo "High vulnerabilities found. Exiting."
             exit 1
           fi
-
