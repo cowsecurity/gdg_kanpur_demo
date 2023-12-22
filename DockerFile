@@ -1,0 +1,6 @@
+FROM python:2
+WORKDIR /app
+COPY . /app
+RUN pip2 install flask jinja2
+EXPOSE 80
+CMD ["python2", "hackme.py"]
