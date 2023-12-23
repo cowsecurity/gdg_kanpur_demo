@@ -4,7 +4,7 @@
 * open redirect : http://localhost/redirect?url=http://127.0.0.1/contact
 * SQLI : http://localhost/posts/{ID}
 
-Coded By khaled Nassar @knassar702
+Coded By khaled Nassar [@knassar702](https://github.com/knassar702/hacking-lab) 
 
 # Requirements :
 - python2
