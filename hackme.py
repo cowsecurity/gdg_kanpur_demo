@@ -117,7 +117,7 @@ def search():
 def edite(id):
     error= None
     if session.get('user')=='admin':
-        cur = g.db.execute('select id, title, description, date, text from entries where id = {}'.format(id))
+        cur = g.db.execute('select id, title, description, date, text from entries where id = ?', [id])
         a = cur.fetchall()
         id=str(id)
         entries = [dict(id=row[0],title=row[1], description=row[2],text=row[4]) for row in a]
